@@ -130,8 +130,10 @@ std::vector<float> function(std::vector<Pos> pos)
 
 float func(Pos pos)
 {
+    Pos Obs{obsX, obsY};
+    Pos Goal{goalX, goalY};
 
-    return pos.x * pos.y;
+    return K1 * (1 / euclid(Obs, pos)) + K2 * euclid(Goal, pos);
 }
 
 //--------------------------------------------------------------------------------
